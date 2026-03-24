@@ -1,26 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int hours, minutes, seconds;
-    int total_seconds;
+    // Вхідні дані
+    int n = 3680;
 
-    printf("Введіть години: ");
-    scanf("%d", &hours);
+    // Розрахунок годин, хвилин та секунд
+    int hours = n / 3600;
+    int minutes = (n % 3600) / 60;
+    int seconds = n % 60;
 
-    printf("Введіть хвилини: ");
-    scanf("%d", &minutes);
-
-    printf("Введіть секунди: ");
-    scanf("%d", &seconds);
-
-    // Переводимо все в секунди
-    total_seconds = hours * 3600 + minutes * 60 + seconds;
-
-    // Знову рахуємо правильно (на випадок, якщо ввели більше 60 хв або сек)
-    hours = total_seconds / 3600;
-    minutes = (total_seconds % 3600) / 60;
-    seconds = total_seconds % 60;
-
+    // Виведення результату
     printf("З початку доби пройшло %d годин %d хвилин %d секунд\n", hours, minutes, seconds);
 
     return 0;
